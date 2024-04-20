@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title> AdonisJS - A fully featured web framework for Node.js </title>
+  @vite(['resources/css/app.css', 'resources/js/app.js'])
+  <style>
+    body {
+      margin: 0;
+    }
+
+    .container {
+      width: 100%;
+      background-color: lightgrey;
+      display: flex;
+      overflow-x: auto; /* Horizontale Bildlaufleiste hinzufügen */
+    }
+
+    .notiz {
+      flex-grow: 0; /* Verhindern, dass Notizen sich in der Breite strecken */
+      flex-shrink: 0; /* Verhindern, dass Notizen in der Breite schrumpfen */
+      width: 20%; /* Breite jeder Notiz festlegen */
+      height: 15vw;
+      margin: 2.5%; 
+      padding: 0.5rem;
+      background-color: yellow;
+      box-shadow: 0 0 4px 2px darkgrey;
+      word-wrap: break-word;
+      overflow: auto; /* Zeigt Scrollbalken, wenn der Text den verfügbaren Platz überschreitet */
+      font-size: calc(0.8vw + 0.8vh + 0.8vmin); /* Skalierung der Schriftgröße basierend auf der Viewport-Größe */
+      line-height: 1.15;
+    }
+
+    .notiz h1 {
+      font-size: 1.5rem;
+      font-family: Arial, Helvetica, sans-serif;
+    }
+
+    .notiz p {
+      font-size: 1rem;
+      font-family: Arial, Helvetica, sans-serif;
+    }
+  </style>
+</head>
+<body>
+
+  <section>
+    <div class="container" id="container_neuste">
+      <div class="notiz"></div>
+      <div class="notiz"></div>
+      <div class="notiz"></div>
+      <div class="notiz"></div>
+      <div class="notiz"></div>
+      <div class="notiz"></div>
+      <div class="notiz"></div>
+      <div class="notiz"></div>
+      <div class="notiz"></div>
+    </div>
+  </section>
+
+</body>
+</html>
