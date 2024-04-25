@@ -7,17 +7,11 @@
 |
 */
 
-import { Redirect } from '@adonisjs/core/http';
 import router from '@adonisjs/core/services/router'
+import db from '@adonisjs/lucid/services/db'
+import hash from '@adonisjs/core/services/hash'
 
-router.on('/').render('pages/home')
+router.get('/', async({ view })=>{
+    return view.render('pages/home')
+})
 
-
-router.on('/login').render('pages/login')
-
-router.post('/login', async ({ request }) => {
-    const name = request.input('name');
-    const password = request.input('password');
-
-    return name
-});
