@@ -86,3 +86,32 @@ color: white;
 aside h1 {
 margin: 0;
 }
+
+aside h1 span {
+font-size: 1.2rem;
+font-weight: bold;
+text-decoration: underline;
+
+}
+
+#Kat_header {
+  display: flex;
+  width: 100%;
+  
+  background-color: darkgrey;
+  justify-content:space-around;
+  align-items: center;
+  margin-bottom: 1rem;
+  flex-grow: 1;
+}
+
+aside a {
+  height: 2rem;
+  width: 20%;
+  margin: 0.5rem 0 0.5rem 0;
+}
+
+aside img {
+  height: 2rem;
+  width: 2rem;
+}
