@@ -11,7 +11,6 @@
 header {
   width: 100%;
   height: 10%;
-  
 }
 
 img {
@@ -21,9 +20,8 @@ img {
 
 section {
   display: flex;
-  align-items: center;
   justify-content: center;
-  height: 85%;
+  height: 85vh;
   background: #4c4b4b;
 }
 
@@ -33,14 +31,26 @@ p {
 }
 
 #wrapper {
-  width: 20em;
+  width: 20rem;
+  height: 85%;
+  
+  background: white;
+  box-shadow: #fff 0px 0px 10px;
+}
+
+#wrapper h1 {
+  width: 100%;
+  height: 1.5rem;
+  text-align: center;
+  padding: 2rem 0 6rem 0;
+  line-height: 2rem;
+  color: black;
+  text-shadow: grey 2px 2px 5px;
 }
 
 form {
   width: 100%;
   height: 4em;
-  position: relative;
-  margin-top: 1.2em;
 }
 
 form input {
@@ -53,6 +63,7 @@ form input {
   color: #fff; 
   margin-bottom: 1em;
 }
+
 
 .name {
   /* transform: translateY(-50%);
@@ -70,12 +81,6 @@ form input {
   color: #fff; */
 }
 
-.summit {
-  padding: 1em;
-  border-radius: 1em;
-  width: 8em;
-  float: right;
-}
 
 footer{
   height: 5%;

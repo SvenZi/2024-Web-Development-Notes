@@ -1,12 +1,66 @@
->
+<!DOCTYPE html>
+<html>
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title> AdonisJS - A fully featured web framework for Node.js </title>
-
-  @vite(['resources/css/app.css', 'resources/js/notiz_erstellen.css','resources/js/app.js'])
+  @vite(['resources/css/app.css', 'resources/css/erstellen.css', 'resources/js/app.js'])
 </head>
+
 <body>
-  <h1> It Works! </h1>
+    <header>
+        <a href="/"><img src="https://upload.wikimedia.org/wikipedia/commons/a/aa/Notizzettel.JPG"></a>
+        
+    </header>
+    
+    <section>  
+
+        <div id="notizvorlage">
+          <form action="" method="POST">
+            {{ csrfField() }}
+            <input type="text" name="title" placeholder="Titel">
+            <textarea name="content" placeholder="Notiz"></textarea>
+            
+            <div id="infos">
+                
+                Erledigen bis:
+                <div id="frist">
+                  <input type="date" name="date">
+                </div>
+
+                <div id="anhang">
+                  <input type="file" name="file">
+                  
+                </div>
+
+                <div id="kategorie">
+                  <label for="kategorie">Kategorie:</label>
+                  <select name="category">
+                    <option value="privat">Privat</option>
+                    <option value="arbeit">Arbeit</option>
+                    <option value="schule">Schule</option>
+                    <option value="sonstiges">Sonstiges</option>
+                  </select>
+                </div>
+
+                <button type="submit">Notiz speichern</button>  
+                  
+                 
+            </div>
+          </form>
+        </div>
+    </section>
+    <footer>
+                <p>
+            Copyright © 2021-2022 Notes Inc. Alle Rechte vorbehalten.
+                    <a href="#">Notizzettel-AGB</a>,
+                    <a href="#">Datenschutzerklärung</a>, Erklärung zur Verwendung von
+                    <a href="#">Cookies</a>
+                    und 
+                    <a href="#">AdChoice &#128712;</a>
+        </p> 
+    </footer>
+
 </body>
-</html>  
+
+</html>

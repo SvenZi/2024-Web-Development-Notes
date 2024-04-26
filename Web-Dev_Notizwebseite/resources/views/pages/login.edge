@@ -16,14 +16,24 @@
     <section>  
 
         <div id="wrapper">
-        
-            <form action="/login" method="POST">
+            <h1>Melde dich mit nur einem Klick an!</h1>
+            <form id="loginForm" action="/login" method="POST">
                 {{ csrfField() }}
                 <input class="name" type="text" name="name" placeholder="Nutzername" required="required">
                 <input class="pw" type="password" name="password" placeholder="Passwort" required="required">
-          
-                <input class="summit" type="submit" value="Anmelden">
+                      
+                <input class="submit" type="submit" value="Anmelden">
+                <input class="submit" type="button" value="Registrieren" onclick="submitToRegister()">
             </form>
+            
+            <script>
+                function submitToRegister() {
+                    var form = document.getElementById("loginForm");
+                    form.action = "/register"; // Ändere action auf /register
+                    form.submit(); // Sende das Formular ab
+                }
+            </script>
+            
         
         </div>
     </section>
@@ -39,4 +49,5 @@
     </footer>
 
 </body>
+
 </html>

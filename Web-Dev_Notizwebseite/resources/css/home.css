@@ -19,18 +19,22 @@ width: 80vw;
 .section_h2 {
 height: 5vh;
 padding: 0.5rem;
+margin: 0 0 0.5rem 0;
 font-family: Arial, Helvetica, sans-serif;
+background-color: rgb(124, 183, 234);
+box-shadow: 0 0 4px 5px rgb(124, 183, 234);
 }
+  
 
 .container {
 margin: 0;
-background-color: lightgrey;
 display: flex;
 }
 
 #container_anstehend {
 width: 100%;
 height: 65vh;
+padding: 0 0.5rem 0 0.5rem;
 flex-wrap: wrap;
 overflow: scroll; 
 }
@@ -43,16 +47,26 @@ align-items: center;
 
 .notiz {
 flex-grow: 1;
+flex-wrap: wrap;
 width: 20%;
-height: 30%;
+max-width: 20vw;
+min-width: 150px;
+height: 35%;
 margin: 0.5rem;
 padding: 0.5rem;
-background-color: yellow;
+background-color: rgb(253, 255, 133);
 box-shadow: 0 0 4px 2px darkgrey;
 word-wrap:break-word;
 overflow: auto; /* Zeigt Scrollbalken, wenn der Text den verfügbaren Platz überschreitet */
 /* font-size: calc(0.8vw + 0.8vh + 0.8vmin); Skalierung der Schriftgröße basierend auf der Viewport-Größe */
 line-height: 1.15;
+transition-duration: 0.5s;
+}
+
+.notiz:hover {
+background-color: lightyellow;
+transform: scale(0.95);
+
 }
 
 #notiz_neuste {
@@ -64,11 +78,11 @@ width: 20%;
 }
 
 .notiz h1 {
-font-size: 1.5rem;
+font-size: 1rem;
 font-family: Arial, Helvetica, sans-serif;
 }
 .notiz p {
-font-size: 1rem;
+font-size: 0.75rem;
 font-family: Arial, Helvetica, sans-serif;
 }
 
@@ -78,9 +92,11 @@ aside {
 float: left;
 height: 100vh;
 width: 20vw;
-background-color: blue;
+background-color: rgb(124, 183, 234);
+box-shadow: 0 0 4px 5px rgb(124, 183, 234);
 padding: 1rem;
 color: white;
+z-index: 999;
 }
 
 aside h1 {
@@ -98,7 +114,7 @@ text-decoration: underline;
   display: flex;
   width: 100%;
   
-  background-color: darkgrey;
+  /* background-color: darkgrey; */
   justify-content:space-around;
   align-items: center;
   margin-bottom: 1rem;

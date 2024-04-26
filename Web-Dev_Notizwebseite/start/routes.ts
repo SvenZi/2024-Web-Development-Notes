@@ -18,6 +18,10 @@ router.get('/', async({ view })=>{
 
 router.on('/login').render('pages/login')
 
+router.get('/erstellen', async ({ view }) => {
+    return view.render('pages/notiz_erstellen')
+});
+
 router.post('/login', async ({ request }) => {
     const name = request.input('name');
     const password = request.input('password');

@@ -1,0 +1,115 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  outline: 0;
+  font-family: 'Noto sans',sans-serif;
+}
+
+
+
+header {
+  width: 100%;
+  height: 10%;
+}
+
+img {
+  height: 100%;
+  
+}
+
+section {
+  height: 85vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: white;
+}
+
+#notizvorlage {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  width: 80%;
+  height: 90%;
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 0 10px 5px #4c4b4b;
+
+}
+
+form {
+  width: 100%;
+  height: 100%;
+  display: flow-root;
+}
+
+form input {
+  float: left;
+  width: 98%;
+  height: 5%;
+  margin: 1%;
+  padding: 1%;
+  border: 1px solid lightgrey;
+  border-radius: 5px;
+}
+
+form textarea {
+  float: left;
+  width: 98%;
+  height: 80%;
+  margin: 1%;
+  padding: 1%;
+  border: 1px solid lightgrey;
+  border-radius: 5px;
+}
+
+#infos {
+  float: left;
+  width: 98%;
+  height: 7%;
+  margin: 1%;
+  margin-top: 0;
+  padding: 0.5%;
+  border: 1px solid lightgrey;
+  border-radius: 5px;
+  background: lightgrey;
+  
+  font-weight: bold;
+  background-color: aqua;
+  display: flex;
+  gap: 1vw;
+  align-items:center;
+  flex-wrap: nowrap;
+
+}
+
+form button {
+  flex-grow: 1;
+  float: left;
+  width: auto;
+  
+  height: 1.75rem;
+  font-size: 1rem;
+  border: 1px solid lightgrey;
+  border-radius: 5px;
+  background: lightgrey;
+}
+
+footer{
+  height: 5%;
+  background: lightgrey;
+  padding-top: 1%;
+}
+footer p {
+  clear: both;
+text-align: center;
+font-size: 9px;
+color: grey;}
+
+/* Links */
+footer a {
+color: grey;
+font-weight: bold;
+}
