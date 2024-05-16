@@ -10,6 +10,7 @@
 import router from '@adonisjs/core/services/router'
 import db from '@adonisjs/lucid/services/db'
 import hash from '@adonisjs/core/services/hash'
+import { title } from 'process'
 
 router.get('/', async({ view })=>{
     return view.render('pages/home')
@@ -29,4 +30,18 @@ router.post('/login', async ({ request }) => {
     const password = request.input('password');
 
     return name
+});
+
+router.post('/erstellen', async ({ request, view }) => {
+    // const title = request.input('title');
+    // const content = request.input('content');
+    // const category = request.input('category');
+
+    const result = await db.table('notizs')
+    .insert({
+        titel: request.input('title'),
+        inhalt: request.input('content'),
+        kategorie: request.input('category')})
+    
+    return view.render('home', {result})
 });
