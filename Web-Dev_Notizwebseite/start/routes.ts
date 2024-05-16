@@ -30,3 +30,7 @@ router.post('/login', async ({ request }) => {
 
     return name
 });
+
+router.post('/erstellen', async({ view })=>{
+    return view.render('pages/home')
+});
