@@ -16,7 +16,9 @@ router.get('/', async({ view })=>{
 })
 
 
-router.on('/login').render('pages/login')
+router.get('/login', async({view}) => {
+    return view.render('pages/login')
+});
 
 router.get('/erstellen', async ({ view }) => {
     return view.render('pages/notiz_erstellen')
