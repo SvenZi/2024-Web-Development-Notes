@@ -7,13 +7,13 @@
   @vite(['resources/css/app.css', 'resources/css/home.css', 'resources/js/app.js'])
 </head>
 <body>
-
+{{inspect(notizlist)}}
   <section>
     {{--  <h2 class="section_h2" id="section_h2_anstehend">Als nächtes anstehend:</h2>    --}}
     <h2 class="section_h2">Als nächtes anstehend:</h2>  
 
     <div class="container" id="container_anstehend">
-      <div class="notiz">
+      {{--  <div class="notiz">
         <h1>titel nächte snächtesnächtesnächtes nächtes nächtes nächtes</h1>
         <br>
         <p>not bad this happens if u are in web development
@@ -21,20 +21,17 @@
           not bad this happens if u are in web development
           not bad this happens if u are in web development
         </p>
-      </div>
-      @foreach($notiz in $notizlist)
+      </div>  --}}
+      @each(a in notizlist)
         <div class="notiz">
-          <h1>{{ notiz.titel }}</h1>
+
+          <h1>{{ a.titel }} </h1>
           <br>
-          <p>{{ notiz.content }}</p>
+          <p>{{ a.inhalt }}</p>
         </div>
-      @endforeach
-      <div class="notiz"></div><div class="notiz"></div><div class="notiz"></div><div class="notiz"></div><div class="notiz"></div><div class="notiz"></div><div class="notiz"></div><div class="notiz"></div><div class="notiz"></div><div class="notiz"></div><div class="notiz"></div><div class="notiz"></div><div class="notiz"></div>
-      <div class="notiz"></div>
-      <div class="notiz"></div>
-      <div class="notiz"></div>
-      <div class="notiz"></div>
-      <div class="notiz"></div>
+      @endeach
+      <div class="notiz">halo</div><div class="notiz"></div><div class="notiz"></div><div class="notiz"></div><div class="notiz"></div><div class="notiz"></div><div class="notiz"></div><div class="notiz"></div><div class="notiz"></div><div class="notiz"></div><div class="notiz"></div><div class="notiz"></div><div class="notiz"></div>
+      
     </div>
 
     {{--  <h2 class="section_h2" id="section_h2_neuste">als letztes erstellt:</h2>  --}}

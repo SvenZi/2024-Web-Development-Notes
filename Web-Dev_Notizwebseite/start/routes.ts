@@ -15,8 +15,9 @@ import { view } from '@adonisjs/core/build/standalone';
 
 router.get('/', async({ view })=>{
     const notizlist = await db.from('notizs').select('*')
-
-    return view.render('pages/home', notizlist)
+    //return notizlist
+    return view.render('pages/home', {notizlist});
+    
 })
 
 
