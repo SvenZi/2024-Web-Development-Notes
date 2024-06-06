@@ -11,9 +11,12 @@ import router from '@adonisjs/core/services/router'
 import db from '@adonisjs/lucid/services/db'
 import hash from '@adonisjs/core/services/hash'
 import { title } from 'process'
+import { view } from '@adonisjs/core/build/standalone';
 
 router.get('/', async({ view })=>{
-    return view.render('pages/home')
+    const notizlist = await db.from('notizs').select('*')
+
+    return view.render('pages/home', notizlist)
 })
 
 
@@ -39,9 +42,9 @@ router.post('/erstellen', async ({ request, view }) => {
 
     const result = await db.table('notizs')
     .insert({
-        titel: request.input('title'),
-        inhalt: request.input('content'),
+        titel: request.input('titel'),
+        inhalt: request.input('inhalt'),
         kategorie: request.input('category')})
     
-    return view.render('home', {result})
+    return view.render('pages/home', {result})
 });
