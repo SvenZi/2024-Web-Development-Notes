@@ -15,11 +15,14 @@ import { view } from '@adonisjs/core/build/standalone';
 
 router.get('/', async({ view })=>{
     const notizlist = await db.from('notizs').select('*')
-    //return notizlist
+    console.log (notizlist)
     return view.render('pages/home', {notizlist});
     
 })
 
+router.get('/test', async({ view })=>{
+    return view.render('pages/test')
+});
 
 router.get('/login', async({view}) => {
     return view.render('pages/login')
@@ -36,16 +39,12 @@ router.post('/login', async ({ request }) => {
     return name
 });
 
-router.post('/erstellen', async ({ request, view }) => {
-    // const title = request.input('title');
-    // const content = request.input('content');
-    // const category = request.input('category');
-
+router.post('/erstellen', async ({ request, response }) => {
     const result = await db.table('notizs')
     .insert({
-        titel: request.input('titel'),
-        inhalt: request.input('inhalt'),
+        titel: request.input('title'),
+        inhalt: request.input('content'),
         kategorie: request.input('category')})
     
-    return view.render('pages/home', {result})
-});
+        response.redirect('/')
+    });
